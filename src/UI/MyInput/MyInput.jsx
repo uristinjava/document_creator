@@ -14,21 +14,9 @@ export const MyInput = ({ label, ...props }) => {
 
         < >
 
-            <Box
-                sx={{
-                    '& > :not(style)': { m: 1, width: '25inc' },
-                }}
-                noValidate
-                autoComplete="off"
-            >
-                <TextField
-                    id="outlined-basic"
-                    label={label}
-                    variant="outlined"
-                    {...props}
 
-                />
-            </Box>
+            <TextField id="filled-size-small" label={label} variant="standard" size="small" {...props} />
+
 
         </>
 

@@ -9,6 +9,10 @@ import { SRO } from '../../components/SRO/SRO';
 import style from './Document.module.css'
 import { Modal } from '../../components/Modal/Modal';
 
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { MyButton } from '../../UI/MyButton/MyButton';
+// import style from '../../components/ListItem/ListItem.module.css'
+
 
 
 export const Document = () => {
@@ -20,22 +24,56 @@ export const Document = () => {
 
     const handleGetDataCourt = (dataCourt) => {
         setDataCourt(dataCourt)
+        console.log(dataCourt)
+        setModalCourtActive(false)
 
     }
-    const [dataCreditor, setDataCreditor] = useState({
-        id: Date.now(),
-        forename: '',
-        adres: '',
-        titleContract: '',
-        contractSum: '',
+    const [dataCreditor, setDataCreditor] = useState(
 
-    })
+
+        {
+            id: Date.now(),
+            forename: '',
+            adres: '',
+            titleContract: '',
+            contractSum: '',
+        },
+
+
+    )
+
+
+    const [arrDataCreditor, setArrDataCreditor] = useState([
+
+    ]);
+
 
     const handleGetDataCreditor = (dataCreditor) => {
         setDataCreditor(dataCreditor)
+        console.log(dataCreditor)
+        const newArrDataCreditor = [...arrDataCreditor, dataCreditor]
+        setArrDataCreditor(newArrDataCreditor)
+        console.log(newArrDataCreditor)
     }
 
 
+    // const arrCreditorTitle = arrDataCreditor.map(
+    //     el => (
+    //         console.log(el.forename)
+    //     )
+    // )
+
+    console.log(arrDataCreditor)
+    // console.log(arrCreditorTitle)
+
+
+
+    const renderCreditor = () => {
+
+
+
+        setModalCreditorActive(false)
+    }
 
 
 
@@ -70,8 +108,10 @@ export const Document = () => {
     })
 
     const handleGetDataDebtor = (dataDebtor) => {
-        setDataCreditor(dataDebtor)
+        setDataDebtor(dataDebtor)
         console.log(dataDebtor)
+        setModalDebtorActive(false)
+
     }
 
     const [dataSRO, setDataSRO] = useState({
@@ -83,6 +123,7 @@ export const Document = () => {
     const handleGetDataSRO = (dataSRO) => {
         setDataSRO(dataSRO)
         console.log(dataSRO)
+        setModalSROActive(false)
     }
 
     const [modalCourtActive, setModalCourtActive] = useState(false)
@@ -109,6 +150,46 @@ export const Document = () => {
         setModalSROActive(true)
     }
 
+    //добавление/удаление кредитора в модалке
+    const item = <Creditor onClick={handleGetDataCreditor} />
+
+
+    const [list, setList] = useState(
+        [
+            {
+                id: 1, item
+            },
+
+        ]
+    )
+
+
+    const addItem = () => {
+        const newItem = {
+            id: Date.now(),
+            item
+        }
+        setList(
+            [...list, newItem]
+        )
+
+    }
+
+    const delItem = (id) => {
+        setList(
+            (prevState) => prevState.filter(item => item.id !== id)
+        )
+    }
+
+
+
+
+
+
+
+
+
+
     return (
         <div className={style.wrapper} >
             <div className={style.btn_box}>
@@ -133,7 +214,41 @@ export const Document = () => {
                 </Modal>
 
                 <Modal active={modalCReditorActive} setActive={setModalCreditorActive} >
-                    <ListItem component={<Creditor onClick={handleGetDataCreditor} />} />
+
+                    <div className={style.box_addBtn} >
+
+                        <ul className={style.box_ul} >
+                            {list.length === 0
+                                ?
+                                <div onClick={addItem} className={style.box_add}>
+                                    <AddCircleOutlineIcon />
+                                    Добавить Кредитора
+                                </div>
+                                :
+                                list.map((el, index) => (
+
+                                    <li key={el.id} >
+                                        {index + 1}.{el.item}
+                                        <div className={style.box} >
+                                            <div onClick={addItem} className={style.box_add}>
+                                                <AddCircleOutlineIcon />
+                                                Добавить
+                                            </div>
+                                            <div onClick={() => { delItem(el.id) }} className={style.box_add}>
+                                                <AddCircleOutlineIcon />
+                                                Удалить
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                ))
+                            }
+                            <MyButton onClick={renderCreditor} >
+                                Добавить данные в заявелние и закрыть окно
+                            </MyButton>
+                        </ul>
+                    </div>
+
                 </Modal>
 
                 <Modal active={modalDebtorActive} setActive={setModalDebtorActive} >
@@ -150,9 +265,26 @@ export const Document = () => {
                 <h3>Адрес: {dataCourt.adres} </h3>
                 <br />
                 <h3>Кредитор:
-                    {
+                    <ul>
 
-                    }
+
+                        {arrDataCreditor.map((el, index) => (
+
+                            <li key={el.id} > {index + 1} {el.forename}
+                                <br />
+                                {el.adres}
+                            </li>
+
+
+                        ))}
+
+                        {/* {arrDataCreditorTitle.map((el, index) => (
+
+                            <li key={el.id} > {index + 1} {el.forename}</li>
+                        ))} */}
+
+                    </ul>
+
 
                 </h3>
             </div>

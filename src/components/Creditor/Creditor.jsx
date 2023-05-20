@@ -6,6 +6,7 @@ import style from './Creditor.module.css';
 import { FormList } from '../FormList/FormList';
 import { ListItem } from '../ListItem/ListItem';
 import { useFormik } from 'formik';
+import { DisabledByDefault } from '@mui/icons-material';
 
 
 
@@ -21,6 +22,7 @@ export const Creditor = ({ onClick }) => {
 
         onSubmit: values => {
 
+            // console.log(values)
         },
     })
 
@@ -31,6 +33,7 @@ export const Creditor = ({ onClick }) => {
             adres: formik.values.adres,
             titleContract: formik.values.titleContract,
             contractSum: formik.values.contractSum
+
         })
 
     }
@@ -44,8 +47,11 @@ export const Creditor = ({ onClick }) => {
                     data={creditor}
                     onChange={formik.handleChange}
                 />
-                <Checkbox />
-                <p className={style.text} >задолженность связанная с предпринимательской деятельностью</p>
+                <label className={style.box}>
+
+                    <Checkbox />
+                    <p className={style.text} >задолженность связанная с предпринимательской деятельностью</p>
+                </label>
                 <MyButton
                     type="submit"
                     onClick={addObj}

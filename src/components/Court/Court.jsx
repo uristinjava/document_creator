@@ -16,7 +16,8 @@ export const Court = ({ onClick, ...props }) => {
         },
 
         onSubmit: values => {
-            // console.log(values)
+
+            console.log(values)
         },
     })
 
@@ -24,8 +25,7 @@ export const Court = ({ onClick, ...props }) => {
         onClick({
             forename: formik.values.forename,
             adres: formik.values.adres
-        }
-        )
+        })
 
     }
 

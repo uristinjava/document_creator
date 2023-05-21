@@ -75,7 +75,7 @@ export const Debtor = ({ onClick }) => {
     }
     return (
         <form className={style.box} onSubmit={formik.handleSubmit} >
-            <FormList
+            <FormList className={style.box_item}
                 data={debtorData}
                 onChange={formik.handleChange}
             />

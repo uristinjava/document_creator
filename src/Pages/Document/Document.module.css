@@ -16,6 +16,14 @@
     max-width: 30%;
 }
 
+.box_addBtn {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+
 .btn {
     display: flex;
     align-items: center;
@@ -26,6 +34,7 @@
     background: whitesmoke;
     border: 2px solid red;
     width: 20vw;
+    cursor: pointer;
 }
 
 .predoc {
@@ -33,5 +42,33 @@
     width: 55vw;
     height: 70vh;
     background: white;
+
+}
+
+.box {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.box_add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.box_ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 8px;
+    max-width: 740px;
+    max-height: 80vh;
+
 
 }

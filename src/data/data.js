@@ -10,6 +10,7 @@ export const creditor = {
     title: 'Данные Кредитора',
     forename: 'Наименование Кредитора',
     adres: 'Адрес Кредитора',
+    kindContract: 'Вид обязательства',
     titleContract: 'Основание задолженности',
     contractSum: 'Сумма задолженности',
 }

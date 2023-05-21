@@ -32,6 +32,7 @@ export const Creditor = ({ onClick }) => {
             forename: formik.values.forename,
             adres: formik.values.adres,
             titleContract: formik.values.titleContract,
+            kindContract: formik.values.kindContract,
             contractSum: formik.values.contractSum
 
         })

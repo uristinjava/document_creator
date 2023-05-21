@@ -3,31 +3,15 @@ import React from 'react'
 const poblen = () => {
 
     const arrCreditor = [
-        {
-            id: Date.now(),
-            title: 'Данные Кредитора',
-            forename: 'Наименование Кредитора',
-            adres: 'Адрес Кредитора',
-            titleContract: 'Основание задолженности',
-            contractSum: 'Сумма задолженности',
-        },
-        {
-            id: Date.now(),
-            title: 'Данные Кредитора',
-            forename: 'Наименование Кредитора',
-            adres: 'Адрес Кредитора',
-            titleContract: 'Основание задолженности',
-            contractSum: 'Сумма задолженности',
-        },
-        {
-            id: Date.now(),
-            title: 'Данные Кредитора',
-            forename: 'Наименование Кредитора',
-            adres: 'Адрес Кредитора',
-            titleContract: 'Основание задолженности',
-            contractSum: 'Сумма задолженности',
-        }
+
+        { id: 1684577973136, forename: 'ПАО "Сбербанк"!', adres: '', titleContract: '', contractSum: '' },
+
+        { id: 1684577979114, forename: 'ПАО "Сбербанк"!', adres: '', titleContract: '', contractSum: '' },
+
+        { id: 1684577985206, forename: 'ВТБ', adres: '', titleContract: '', contractSum: '' },
     ]
+
+    //newArrCreditorTitle должен содержать только объекты с уникальными значениями forename
     const newArrCreditorTitle = arrCreditor.filter(el => el.forename !== el.forename)
 
 

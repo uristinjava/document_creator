@@ -43,12 +43,44 @@ export const Document = () => {
     )
 
 
+    const [arrDataTitleCreditor, setArrDataTitleCreditor] = useState([
+
+    ]);
     const [arrDataCreditor, setArrDataCreditor] = useState([
 
     ]);
 
+    // const [arrDataCreditor, setArrDataCreditor] = useState([
 
-    const handleGetDataCreditor = (dataCreditor) => {
+    // ]);
+
+
+
+
+    // const handleGetDataCreditor = (dataCreditor) => {
+    //     setDataCreditor(dataCreditor)
+    //     console.log(dataCreditor)
+    //     const newArrDataCreditor = [...arrDataCreditor, dataCreditor]
+    //     setArrDataCreditor(newArrDataCreditor)
+    //     console.log(newArrDataCreditor)
+
+    // }
+
+    const handleGetDataCreditor = dataCreditor => {
+
+        setArrDataTitleCreditor(prev => {
+            const isCreditorExists = prev.some(
+                item => item?.forename === dataCreditor?.forename
+            )
+
+
+            if (!isCreditorExists) {
+                return [...prev, dataCreditor]
+            }
+
+            return prev
+        })
+
         setDataCreditor(dataCreditor)
         console.log(dataCreditor)
         const newArrDataCreditor = [...arrDataCreditor, dataCreditor]
@@ -57,19 +89,12 @@ export const Document = () => {
     }
 
 
-    // const arrCreditorTitle = arrDataCreditor.map(
-    //     el => (
-    //         console.log(el.forename)
-    //     )
-    // )
+
 
     console.log(arrDataCreditor)
-    // console.log(arrCreditorTitle)
-
-
+    console.log(arrDataTitleCreditor)
 
     const renderCreditor = () => {
-
 
 
         setModalCreditorActive(false)
@@ -181,15 +206,6 @@ export const Document = () => {
         )
     }
 
-
-
-
-
-
-
-
-
-
     return (
         <div className={style.wrapper} >
             <div className={style.btn_box}>
@@ -244,7 +260,7 @@ export const Document = () => {
                                 ))
                             }
                             <MyButton onClick={renderCreditor} >
-                                Добавить данные в заявелние и закрыть окно
+                                Добавить данные в заявлeние и закрыть окно
                             </MyButton>
                         </ul>
                     </div>
@@ -266,9 +282,7 @@ export const Document = () => {
                 <br />
                 <h3>Кредитор:
                     <ul>
-
-
-                        {arrDataCreditor.map((el, index) => (
+                        {arrDataTitleCreditor.map((el, index) => (
 
                             <li key={el.id} > {index + 1} {el.forename}
                                 <br />
@@ -277,15 +291,7 @@ export const Document = () => {
 
 
                         ))}
-
-                        {/* {arrDataCreditorTitle.map((el, index) => (
-
-                            <li key={el.id} > {index + 1} {el.forename}</li>
-                        ))} */}
-
                     </ul>
-
-
                 </h3>
             </div>
 

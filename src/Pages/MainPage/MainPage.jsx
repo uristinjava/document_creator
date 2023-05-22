@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
+
+import style from './MainPage.module.css'
 
 export const MainPage = () => {
     return (
-        <div>MainPage</div>
+        <div className={style.mainPage} ></div>
     )
 }

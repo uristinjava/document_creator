@@ -454,44 +454,46 @@ export const Document = () => {
                         истребовать недостающие документы при подготовке дела к судебному разбирательству.
                     </p>
 
-                    <p>Приложения:</p>
-                    <ol>
-                        <li>-Документы, подтверждающие направление заявления и документов кредитору;</li>
-                        <li>-Квитанция об уплате государственной пошлины;</li>
-                        <li>-Квитанция о перечислении денежных средств на депозит Арбитражного суда, на выплату вознаграждения финансовому управляющему;</li>
-                        <li>-Квитанция о направлении указанного заявления в налоговый орган по месту регистрации Должника;</li>
-                        <li>-Выписки из ЕГРЮЛ в отношении кредиторов согласно перечню Заявления;</li>
-                        <li>-Сведения из ЕГРИП;</li>
-                        <li>-Список кредиторов и должников Должника;</li>
-                        <li>-Опись имущества гражданина с указанием места нахождения или хранения имущества;</li>
-                        <li>-Паспорт;</li>
-                        <li>-Свидетельство о постановке на учет в налоговом органе;</li>
-                        <li>-Страховое свидетельство государственного пенсионного страхования;</li>
-                        <li>-Сведения о состоянии индивидуального лицевого счета;</li>
-                        <li>-Справки о подтверждающие доход;</li>
-                        <li>-Информация по наличию денежных средств на счетах;</li>
-                        <li>-Сведения из ЕГРН</li>
-                        <li>-Кредитная история;</li>
-                        <li>-Сведения о задолженности по исполнительным производствам</li>
-                        <li>-Справка о наличии денежных средств на расходы по процедуре банкротства</li>
-                        {+ (dataDebtor.childDebtor) > 1
-                            ?
-                            <li>-Свидетельства о рождении детей</li>
-                            :
-                            <li></li>
-                        }
+                    <div className={style.end_isk}>
 
-                    </ol>
-                    <p style={{ fontStyle: 'italic', textAlign: 'center' }} >
-                        Копии документов, приложенные к данному заявлению, имеются у Заявителя в подлинниках, которые будут
-                        предоставлены суду в назначенное время судебного заседания для заверения.
-                    </p>
-                    <br />
-                    <br />
+                        <p>Приложения:</p>
+                        <ol>
+                            <li>-Документы, подтверждающие направление заявления и документов кредитору;</li>
+                            <li>-Квитанция об уплате государственной пошлины;</li>
+                            <li>-Квитанция о перечислении денежных средств на депозит Арбитражного суда, на выплату вознаграждения финансовому управляющему;</li>
+                            <li>-Документы, подтверждающие направление заявления и документов кредитору;</li>
+                            <li>-Квитанция о направлении указанного заявления в налоговый орган по месту регистрации Должника;</li>
+                            <li>-Выписки из ЕГРЮЛ в отношении кредиторов согласно перечню Заявления;</li>
+                            <li>-Сведения из ЕГРИП;</li>
+                            <li>-Список кредиторов и должников Должника;</li>
+                            <li>-Опись имущества гражданина с указанием места нахождения или хранения имущества;</li>
+                            <li>-Паспорт;</li>
+                            <li>-Свидетельство о постановке на учет в налоговом органе;</li>
+                            <li>-Страховое свидетельство государственного пенсионного страхования;</li>
+                            <li>-Сведения о состоянии индивидуального лицевого счета;</li>
+                            <li>-Справки о подтверждающие доход;</li>
+                            <li>-Информация по наличию денежных средств на счетах;</li>
+                            <li>-Сведения из ЕГРН</li>
+                            <li>-Кредитная история;</li>
+                            <li>-Сведения о задолженности по исполнительным производствам</li>
+                            <li>-Справка о наличии денежных средств на расходы по процедуре банкротства</li>
+                            {+ (dataDebtor.childDebtor) > 1
+                                ?
+                                <li>-Свидетельства о рождении детей</li>
+                                :
+                                <li></li>
+                            }
 
-                    <p style={{ textAlign: 'end', marginBottom: '1rem' }} >
-                        ________________________/{dataDebtor.surNameDebtor} {dataDebtor.nameDebtor}  {dataDebtor.fatherNameDebtor}
-                    </p>
+                        </ol>
+                        <p style={{ fontStyle: 'italic', textAlign: 'center' }} >
+                            Копии документов, приложенные к данному заявлению, имеются у Заявителя в подлинниках, которые будут
+                            предоставлены суду в назначенное время судебного заседания для заверения.
+                        </p>
+                        <br />
+                        <p style={{ textAlign: 'end', marginBottom: '1rem', }} >
+                            ________________________/{dataDebtor.surNameDebtor} {dataDebtor.nameDebtor}  {dataDebtor.fatherNameDebtor}
+                        </p>
+                    </div>
                 </div>
 
                 <div className={style.main_application}>
@@ -844,9 +846,378 @@ export const Document = () => {
                     </div>
 
                     <h6>Сведения о неденежных обязательствах гражданина, за исключением возникших в результате осуществления гражданином предпринимательской деятельности (в том числе о передаче имущества в собственность, выполнении работ и оказании услуг и так далее):</h6>
-
-
                 </div>
+                <div className={style.application} >
+                    <div className={style.box_application_content} >
+                        <h5 style={{ textAlign: 'center', margin: '.5rem 0' }} >II. Сведения о кредиторах гражданина
+                            (по денежным обязательствам и (или) обязанности по уплате обязательных платежей,
+                            которые возникли в результате осуществления гражданином
+                            предпринимательской деятельности)</h5>
+                    </div>
+                    <div className={style.box_application} >
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > 2.1</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <h5 className={style.text_aplication} >Денежные обязательства</h5>
+                        </div>
+                    </div>
+                    <div className={style.box_application} >
+                        <div className={style.box_application_content} style={{ width: '36%' }}>
+                            <p className={style.text_aplication} style={{ width: '35%' }}  >№ п/п</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Содержание обязательства </p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Кредитор </p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Место нахождения (место жительства) кредитора </p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Основание возникновения</p>
+                        </div>
+                        <div className={style.box_application_content} style={{ flexDirection: 'column', minWidth: '309px', padding: '0' }} >
+                            <div className={style.box_application_content} style={{ border: 'none', marginBottom: '6px', width: '305px' }}>
+                                <h5 className={style.text_aplication} >Сумма обязательства</h5>
+                            </div>
+                            <div className="" style={{ display: 'flex', minWidth: '309px', justifySelf: 'flex-end' }} >
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderLeft: 'none', borderRight: 'none' }} >
+                                    <p >всего</p>
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '40%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    <p >в том<br />числе задолженность</p>
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    <p >Штрафы, пени и иные санкции</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className={style.box_application} >
+                        <div className={style.box_application_content} style={{ width: '36%' }}>
+                            <p className={style.text_aplication} style={{ width: '35%' }}  >1</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Содержание обязательства </p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Кредитор </p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Место нахождения (место жительства) кредитора </p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Основание возникновения</p> */}
+                        </div>
+                        <div className={style.box_application_content} style={{ flexDirection: 'column', minWidth: '309px', padding: '0' }} >
+                            <div className="" style={{ display: 'flex', minWidth: '309px', justifySelf: 'flex-end' }} >
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderLeft: 'none', borderRight: 'none' }} >
+                                    {/* <p >всего</p> */}
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '40%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    {/* <p >в том<br />числе задолженность</p> */}
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    {/* <p >Штрафы, пени и иные санкции</p> */}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className={style.box_application}>
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > 2.2</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <h5 className={style.text_aplication} >Обязательные платежи</h5>
+                        </div>
+                    </div>
+                    <div className={style.box_application}>
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > № п/п</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Наименование налога, сбора или иного обязательного платежа</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Недоимка</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Штрафы, пени и иные санкции</p>
+                        </div>
+                    </div>
+                    <div className={style.box_application}>
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > 1</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} ></p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Недоимка</p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Штрафы, пени и иные санкции</p> */}
+                        </div>
+                    </div>
+
+                    <h6>Сведения о неденежных обязательствах гражданина, которые возникли в результате осуществления гражданином предпринимательской деятельности (в том числе о передаче имущества в собственность, выполнении работ и оказании услуг и так далее): </h6>
+                </div>
+                <div className={style.application} >
+                    <div className={style.box_application_content} >
+                        <h5 style={{ textAlign: 'center', margin: '.5rem 0' }} >III. Сведения о должниках гражданина
+                            (по денежным обязательствам и (или) обязанности по уплате обязательных платежей,
+                            за исключением возникших в результате осуществления гражданином предприниматель-ской деятельности)</h5>
+                    </div>
+                    <div className={style.box_application} >
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > 2.1</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <h5 className={style.text_aplication} >Денежные обязательства</h5>
+                        </div>
+                    </div>
+                    <div className={style.box_application} >
+                        <div className={style.box_application_content} style={{ width: '36%' }}>
+                            <p className={style.text_aplication} style={{ width: '35%' }}  >№ п/п</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Содержание обязательства </p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Кредитор </p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Место нахождения (место жительства) кредитора </p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Основание возникновения</p>
+                        </div>
+                        <div className={style.box_application_content} style={{ flexDirection: 'column', minWidth: '309px', padding: '0' }} >
+                            <div className={style.box_application_content} style={{ border: 'none', marginBottom: '6px', width: '305px' }}>
+                                <h5 className={style.text_aplication} >Сумма обязательства</h5>
+                            </div>
+                            <div className="" style={{ display: 'flex', minWidth: '309px', justifySelf: 'flex-end' }} >
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderLeft: 'none', borderRight: 'none' }} >
+                                    <p >всего</p>
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '40%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    <p >в том<br />числе задолженность</p>
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    <p >Штрафы, пени и иные санкции</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className={style.box_application} >
+                        <div className={style.box_application_content} style={{ width: '36%' }}>
+                            <p className={style.text_aplication} style={{ width: '35%' }}  >1</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Содержание обязательства </p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Кредитор </p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Место нахождения (место жительства) кредитора </p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Основание возникновения</p> */}
+                        </div>
+                        <div className={style.box_application_content} style={{ flexDirection: 'column', minWidth: '309px', padding: '0' }} >
+                            <div className="" style={{ display: 'flex', minWidth: '309px', justifySelf: 'flex-end' }} >
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderLeft: 'none', borderRight: 'none' }} >
+                                    {/* <p >всего</p> */}
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '40%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    {/* <p >в том<br />числе задолженность</p> */}
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    {/* <p >Штрафы, пени и иные санкции</p> */}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className={style.box_application}>
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > 2.2</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <h5 className={style.text_aplication} >Обязательные платежи</h5>
+                        </div>
+                    </div>
+                    <div className={style.box_application}>
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > № п/п</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Наименование налога, сбора или иного обязательного платежа</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Недоимка</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Штрафы, пени и иные санкции</p>
+                        </div>
+                    </div>
+                    <div className={style.box_application}>
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > 1</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} ></p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Недоимка</p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Штрафы, пени и иные санкции</p> */}
+                        </div>
+                    </div>
+
+                    <h6>
+                        Сведения о неденежных обязательствах гражданина, которые возникли в результате осуществления гражданином предпринимательской деятельности (в том числе о передаче имущества в собственность, выполнении работ и оказании услуг и так далее):
+                    </h6>
+                </div>
+                <div className={style.application} >
+                    <div className={style.box_application_content} >
+                        <h5 style={{ textAlign: 'center', margin: '.5rem 0' }} >IV. Сведения о должниках гражданина
+                            (по денежным обязательствам и (или) обязанности по уплате обязательных платежей,
+                            которые возникли в результате осуществления гражданином
+                            предпринимательской деятельности)</h5>
+                    </div>
+                    <div className={style.box_application} >
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > 2.1</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <h5 className={style.text_aplication} >Денежные обязательства</h5>
+                        </div>
+                    </div>
+                    <div className={style.box_application} >
+                        <div className={style.box_application_content} style={{ width: '36%' }}>
+                            <p className={style.text_aplication} style={{ width: '35%' }}  >№ п/п</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Содержание обязательства </p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Кредитор </p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Место нахождения (место жительства) кредитора </p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Основание возникновения</p>
+                        </div>
+                        <div className={style.box_application_content} style={{ flexDirection: 'column', minWidth: '309px', padding: '0' }} >
+                            <div className={style.box_application_content} style={{ border: 'none', marginBottom: '6px', width: '305px' }}>
+                                <h5 className={style.text_aplication} >Сумма обязательства</h5>
+                            </div>
+                            <div className="" style={{ display: 'flex', minWidth: '309px', justifySelf: 'flex-end' }} >
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderLeft: 'none', borderRight: 'none' }} >
+                                    <p >всего</p>
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '40%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    <p >в том<br />числе задолженность</p>
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    <p >Штрафы, пени и иные санкции</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className={style.box_application} >
+                        <div className={style.box_application_content} style={{ width: '36%' }}>
+                            <p className={style.text_aplication} style={{ width: '35%' }}  >1</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Содержание обязательства </p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Кредитор </p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Место нахождения (место жительства) кредитора </p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Основание возникновения</p> */}
+                        </div>
+                        <div className={style.box_application_content} style={{ flexDirection: 'column', minWidth: '309px', padding: '0' }} >
+                            <div className="" style={{ display: 'flex', minWidth: '309px', justifySelf: 'flex-end' }} >
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderLeft: 'none', borderRight: 'none' }} >
+                                    {/* <p >всего</p> */}
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '40%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    {/* <p >в том<br />числе задолженность</p> */}
+                                </div>
+                                <div className={style.box_application_content} style={{ width: '30%', fontSize: '.7rem', borderBottom: 'none', borderRight: 'none' }} >
+                                    {/* <p >Штрафы, пени и иные санкции</p> */}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className={style.box_application}>
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > 2.2</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <h5 className={style.text_aplication} >Обязательные платежи</h5>
+                        </div>
+                    </div>
+                    <div className={style.box_application}>
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > № п/п</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Наименование налога, сбора или иного обязательного платежа</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Недоимка</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            <p className={style.text_aplication} >Штрафы, пени и иные санкции</p>
+                        </div>
+                    </div>
+                    <div className={style.box_application}>
+                        <div className={style.box_application_content} style={{ width: '34.38px' }}>
+                            <p className={style.text_aplication} style={{ width: '34px', margin: '0' }} > 1</p>
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} ></p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Недоимка</p> */}
+                        </div>
+                        <div className={style.box_application_content} >
+                            {/* <p className={style.text_aplication} >Штрафы, пени и иные санкции</p> */}
+                        </div>
+                    </div>
+
+                    <h6>
+                        Сведения о неденежных обязательствах гражданина, которые возникли в результате осуществления гражданином предпринимательской деятельности (в том числе о передаче имущества в собственность, выполнении работ и оказании услуг и так далее):
+                    </h6>
+                    <br /><br /><br />
+
+                    <h5 style={{ width: '100%', margin: '1rem 0', textAlign: 'start' }} >Достоверность и полноту настоящих сведений подтверждаю.</h5>
+                    <p style={{ textAlign: 'end', marginBottom: '1rem' }} >
+                        ________________________/{dataDebtor.surNameDebtor} {dataDebtor.nameDebtor}  {dataDebtor.fatherNameDebtor}
+                    </p>
+                </div>
+
+
 
                 <div className={style.main_application}>
                     <div className={style.title_N2} >

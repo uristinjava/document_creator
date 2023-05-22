@@ -1,0 +1,6 @@
+.mainPage {
+    height: 100vh;
+    background-image: url(../../img/logo-no-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
